@@ -1,38 +1,1568 @@
 [
   {
-    "course": "Quantum Information Science",
-    "professor": "Dr. Memarzadeh",
-    "year": "2026",
-    "semester": "Spring",
+    "course": "Quantum Mechanics I",
+    "professor": "Dr. Vaezi",
+    "year": "1400",
+    "semester": "Fall",
     "exam_type": "Midterm",
-    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/QIS-Midterm2026.pdf",
-    "uploaded_at": "2026-06-25T00:13:11.725150Z"
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/MidTerm1.pdf",
+    "uploaded_at": "2024-05-06T13:18:29Z"
   },
   {
-    "course": "Abstract Algebra I",
-    "professor": "Dr. Abbaszadeh",
-    "year": "2026",
+    "course": "Quantum Mechanics II",
+    "professor": "Dr. Vaezi",
+    "year": "1400",
     "semester": "Spring",
     "exam_type": "Midterm",
-    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/AbstractAlgebra-Midterm-Spring2026.pdf",
-    "uploaded_at": "2026-06-25T00:50:23.106595Z"
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/midterm2.pdf",
+    "uploaded_at": "2024-05-06T13:20:22Z"
+  },
+  {
+    "course": "Quantum Mechanics III",
+    "professor": "Dr. Faraji",
+    "year": "1399",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Q3M.pdf",
+    "uploaded_at": "2024-05-06T14:14:46Z"
+  },
+  {
+    "course": "Quantum Mechanics III",
+    "professor": "Dr. Faraji",
+    "year": "1399",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Q3F.pdf",
+    "uploaded_at": "2024-05-06T14:18:02Z"
+  },
+  {
+    "course": "Mathematical Physics I",
+    "professor": "Dr. Rezakhani",
+    "year": "1399",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/MP-final.pdf",
+    "uploaded_at": "2024-05-06T14:20:25Z"
+  },
+  {
+    "course": "Mathematical Physics I",
+    "professor": "Dr. Rezakhani",
+    "year": "1399",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/MP-midterm.pdf",
+    "uploaded_at": "2024-05-06T14:22:39Z"
+  },
+  {
+    "course": "Thermodynamics I",
+    "professor": "Dr. Rezakhani",
+    "year": "1399",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/TSM-final.pdf",
+    "uploaded_at": "2024-05-06T14:23:42Z"
+  },
+  {
+    "course": "Thermodynamics I",
+    "professor": "Dr. Rezakhani",
+    "year": "1399",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/TSM-midterm.pdf",
+    "uploaded_at": "2024-05-06T14:26:13Z"
+  },
+  {
+    "course": "Computational Physics Simulation",
+    "professor": "Dr. Ghanbarnejad",
+    "year": "1399",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/ComputationalPhysics-midterm.pdf",
+    "uploaded_at": "2024-05-06T14:30:01Z"
+  },
+  {
+    "course": "Thermodynamics II",
+    "professor": "Dr. Moghimi",
+    "year": "1398",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/midterm.pdf",
+    "uploaded_at": "2024-05-06T14:37:49Z"
+  },
+  {
+    "course": "Thermodynamics II",
+    "professor": "Dr. Moghimi",
+    "year": "1398",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Final.pdf",
+    "uploaded_at": "2024-05-06T14:40:48Z"
+  },
+  {
+    "course": "Electromagnetism I",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1399",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file.pdf",
+    "uploaded_at": "2024-05-06T14:42:59Z"
+  },
+  {
+    "course": "Electromagnetism I",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1399",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (2).pdf",
+    "uploaded_at": "2024-05-06T14:47:07Z"
   },
   {
     "course": "Analytical Mechanics II",
-    "professor": "Dr. Abolhasani",
-    "year": "2026",
+    "professor": "Dr. Rahvar",
+    "year": "1400",
     "semester": "Spring",
     "exam_type": "Midterm",
-    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/AM2-Midterm-Spring2026.pdf",
-    "uploaded_at": "2026-06-25T01:10:42.960107Z"
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (4).pdf",
+    "uploaded_at": "2024-05-06T14:48:46Z"
   },
   {
-    "course": "Probability and Applications",
-    "professor": "Dr. Qajar",
-    "year": "2026",
+    "course": "Analytical Mechanics II",
+    "professor": "Dr. Rahvar",
+    "year": "1400",
     "semester": "Spring",
-    "exam_type": "Midterm 2",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (5).pdf",
+    "uploaded_at": "2024-05-06T14:49:49Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1400",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (6).pdf",
+    "uploaded_at": "2024-05-06T14:50:28Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1400",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (8).pdf",
+    "uploaded_at": "2024-05-06T14:52:36Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1400",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (9).pdf",
+    "uploaded_at": "2024-05-06T14:54:26Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1400",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (10).pdf",
+    "uploaded_at": "2024-05-06T14:55:30Z"
+  },
+  {
+    "course": "Thermodynamics I",
+    "professor": "Dr. Karimipour",
+    "year": "1399",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (11).pdf",
+    "uploaded_at": "2024-05-06T14:56:36Z"
+  },
+  {
+    "course": "Astrophysics I",
+    "professor": "Dr. Javadi",
+    "year": "1400",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (12).pdf",
+    "uploaded_at": "2024-05-06T14:58:35Z"
+  },
+  {
+    "course": "Introductory Astronomy",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1400",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (13).pdf",
+    "uploaded_at": "2024-05-06T14:59:37Z"
+  },
+  {
+    "course": "Introductory Astronomy",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1400",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (14).pdf",
+    "uploaded_at": "2024-05-06T15:02:32Z"
+  },
+  {
+    "course": "Special Relativity",
+    "professor": "Dr. Faraji",
+    "year": "1400",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (16).pdf",
+    "uploaded_at": "2024-05-06T15:03:37Z"
+  },
+  {
+    "course": "Special Relativity",
+    "professor": "Dr. Faraji",
+    "year": "1400",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (17).pdf",
+    "uploaded_at": "2024-05-06T15:04:56Z"
+  },
+  {
+    "course": "Elementary Particle Physics",
+    "professor": "Dr. Faraji",
+    "year": "1400",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (18).pdf",
+    "uploaded_at": "2024-05-06T15:06:33Z"
+  },
+  {
+    "course": "Spectroscopy",
+    "professor": "Dr. Asfandiyar",
+    "year": "1400",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (19).pdf",
+    "uploaded_at": "2024-05-06T15:08:00Z"
+  },
+  {
+    "course": "Spectroscopy",
+    "professor": "Dr. Asfandiyar",
+    "year": "1400",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (20).pdf",
+    "uploaded_at": "2024-05-06T15:09:17Z"
+  },
+  {
+    "course": "Mathematical Physics I",
+    "professor": "Dr. Memarzadeh",
+    "year": "1399",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/نیم‌ترم ریاضی فیزیک ۱.pdf",
+    "uploaded_at": "2024-05-06T15:10:16Z"
+  },
+  {
+    "course": "Nonlinear Dynamics & Chaos",
+    "professor": "Dr. Moghimi",
+    "year": "1402",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میان‌ترم_دینامیک_غیرخطی_و_آشوب_۰۲.pdf",
+    "uploaded_at": "2024-05-06T15:14:14Z"
+  },
+  {
+    "course": "Simulation",
+    "professor": "Dr. Ajtahedi",
+    "year": "1402",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/نیم ترم 1402.pdf",
+    "uploaded_at": "2024-05-06T15:16:49Z"
+  },
+  {
+    "course": "Simulation",
+    "professor": "Dr. Ajtahedi",
+    "year": "1400",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/final1400.pdf",
+    "uploaded_at": "2024-05-06T15:18:25Z"
+  },
+  {
+    "course": "Simulation",
+    "professor": "Dr. Ajtahedi",
+    "year": "1400",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/نیم ترم 1400.pdf",
+    "uploaded_at": "2024-05-06T15:18:57Z"
+  },
+  {
+    "course": "Biophysics",
+    "professor": "Dr. Ajtahedi",
+    "year": "1401",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/exam.pdf",
+    "uploaded_at": "2024-05-06T15:19:51Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Baghram",
+    "year": "1403",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم_اول_الکترومغناطیس_۲،_دکتر_باغرام.pdf",
+    "uploaded_at": "2024-05-06T16:37:10Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Baghram",
+    "year": "1403",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم_دوم_الکترومغناطیس_۲،_دکتر_باغرام.pdf",
+    "uploaded_at": "2024-05-06T16:39:09Z"
+  },
+  {
+    "course": "Electromagnetism I",
+    "professor": "Dr. Baghram",
+    "year": "1402",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم_الکترومغناطیس_۱،_دکتر_باغرام.pdf",
+    "uploaded_at": "2024-05-06T16:39:56Z"
+  },
+  {
+    "course": "Analytical Mechanics I",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1402",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم_مجدد_مکانیک_تحلیلی_۱،_دکتر_بهمن_آبادی.pdf",
+    "uploaded_at": "2024-05-06T16:41:18Z"
+  },
+  {
+    "course": "Analytical Mechanics I",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1402",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم_مکانیک_تحلیلی_۱،_دکتر_بهمن_آبادی.pdf",
+    "uploaded_at": "2024-05-06T16:42:20Z"
+  },
+  {
+    "course": "Group Theory",
+    "professor": "Dr. Rezakhani",
+    "year": "1403",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/GT- midterm- modified.pdf",
+    "uploaded_at": "2024-05-06T19:29:58Z"
+  },
+  {
+    "course": "Condensed Matter Physics",
+    "professor": "Dr. Vaezi",
+    "year": "1399",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/midterm_2.pdf",
+    "uploaded_at": "2024-05-06T22:40:54Z"
+  },
+  {
+    "course": "Condensed Matter Physics",
+    "professor": "Dr. Vaezi",
+    "year": "1399",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/midterm_1.pdf",
+    "uploaded_at": "2024-05-06T22:41:58Z"
+  },
+  {
+    "course": "General Relativity",
+    "professor": "Dr. Rahvar",
+    "year": "1403",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/سوالات نسبیت عام-میان ترم.pdf",
+    "uploaded_at": "2024-05-06T22:45:28Z"
+  },
+  {
+    "course": "Cosmology",
+    "professor": "Dr. Abolhasani",
+    "year": "1401",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Final-401.pdf",
+    "uploaded_at": "2024-05-07T20:10:20Z"
+  },
+  {
+    "course": "Cosmology",
+    "professor": "Dr. Abolhasani",
+    "year": "1402",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/adv_cosmology.pdf",
+    "uploaded_at": "2024-05-07T20:11:34Z"
+  },
+  {
+    "course": "Cosmology",
+    "professor": "Dr. Abolhasani",
+    "year": "1402",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Q1 (1).pdf",
+    "uploaded_at": "2024-05-07T20:12:19Z"
+  },
+  {
+    "course": "Cosmology",
+    "professor": "Dr. Abolhasani",
+    "year": "1402",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Q2.pdf",
+    "uploaded_at": "2024-05-07T20:13:24Z"
+  },
+  {
+    "course": "Biophysics",
+    "professor": "Dr. Seyedrahhani",
+    "year": "1402",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم بیوفیزیک_1.pdf",
+    "uploaded_at": "2024-05-07T22:24:01Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Baghram",
+    "year": "1401",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم اول الکمغ ۲.pdf",
+    "uploaded_at": "2024-05-07T22:59:34Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Baghram",
+    "year": "1401",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم دوم الکمغ ۲.pdf",
+    "uploaded_at": "2024-05-07T23:01:15Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Baghram",
+    "year": "1401",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم الکترومغناطیس ۲.pdf",
+    "uploaded_at": "2024-05-07T23:01:52Z"
+  },
+  {
+    "course": "Special Relativity",
+    "professor": "Dr. Baghram",
+    "year": "1399",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/SR-Fall2020-MidtermI.pdf",
+    "uploaded_at": "2024-05-09T14:33:36Z"
+  },
+  {
+    "course": "Neuroscience",
+    "professor": "Dr. Moghimi",
+    "year": "1400",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Mid 1.pdf",
+    "uploaded_at": "2024-05-09T14:40:30Z"
+  },
+  {
+    "course": "Neuroscience",
+    "professor": "Dr. Moghimi",
+    "year": "1400",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Mid 2.pdf",
+    "uploaded_at": "2024-05-09T14:41:32Z"
+  },
+  {
+    "course": "Neuroscience",
+    "professor": "Dr. Moghimi",
+    "year": "1400",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/FinalNero1400-1.pdf",
+    "uploaded_at": "2024-05-09T14:42:43Z"
+  },
+  {
+    "course": "Elementary Particle Physics",
+    "professor": "Dr. Faraji",
+    "year": "1400",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/PMid.pdf",
+    "uploaded_at": "2024-05-10T10:49:38Z"
+  },
+  {
+    "course": "Elementary Particle Physics",
+    "professor": "Dr. Faraji",
+    "year": "1400",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/PFinal.pdf",
+    "uploaded_at": "2024-05-10T10:50:34Z"
+  },
+  {
+    "course": "Semiconductor Physics",
+    "professor": "Dr. Naseri",
+    "year": "1401",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم ۱۴۰۱.pdf",
+    "uploaded_at": "2024-05-11T15:28:53Z"
+  },
+  {
+    "course": "Solid State Physics",
+    "professor": "Dr. Asfandiyar",
+    "year": "1399",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Mid_exam 99.pdf",
+    "uploaded_at": "2024-05-11T15:56:45Z"
+  },
+  {
+    "course": "Cosmology",
+    "professor": "Dr. Baghram",
+    "year": "1396",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/MidtermII-Cosmology-Spring2017.pdf",
+    "uploaded_at": "2024-05-21T22:52:15Z"
+  },
+  {
+    "course": "Cosmology",
+    "professor": "Dr. Baghram",
+    "year": "1396",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/FinalExam-Cosmology-Spring2017.pdf",
+    "uploaded_at": "2024-05-21T22:53:21Z"
+  },
+  {
+    "course": "Quantum Mechanics I",
+    "professor": "Dr. Arfaee",
+    "year": "1396",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/QM-Midterm-Exam_240521_225627.pdf",
+    "uploaded_at": "2024-05-21T22:59:44Z"
+  },
+  {
+    "course": "Quantum Mechanics I",
+    "professor": "Dr. Vaezi",
+    "year": "1400",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/MidTerm2 (1).pdf",
+    "uploaded_at": "2024-05-21T23:09:00Z"
+  },
+  {
+    "course": "Quantum Mechanics I",
+    "professor": "Dr. Vaezi",
+    "year": "1400",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Final (1).pdf",
+    "uploaded_at": "2024-05-21T23:09:20Z"
+  },
+  {
+    "course": "Thermodynamics II",
+    "professor": "Dr. Rezakhani",
+    "year": "1399",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/TSM II- midterm.pdf",
+    "uploaded_at": "2024-05-21T23:36:13Z"
+  },
+  {
+    "course": "Thermodynamics II",
+    "professor": "Dr. Rezakhani",
+    "year": "1399",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/TSM II- final + bonus.pdf",
+    "uploaded_at": "2024-05-21T23:38:30Z"
+  },
+  {
+    "course": "Electromagnetism I",
+    "professor": "Dr. Baghram",
+    "year": "1402",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم_دوم_الکترومغناطیس_۱،_پاییز_۴۰۲.pdf",
+    "uploaded_at": "2024-05-31T10:28:38Z"
+  },
+  {
+    "course": "Electromagnetism I",
+    "professor": "Dr. Baghram",
+    "year": "1402",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم_اول_الکترومغناطیس_۱،_پاییز_۴۰۲_1.pdf",
+    "uploaded_at": "2024-05-31T10:28:40Z"
+  },
+  {
+    "course": "Analytical Mechanics II",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1403",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم دوم مکتح۲ بهار ۴۰۳.pdf",
+    "uploaded_at": "2024-05-31T10:31:33Z"
+  },
+  {
+    "course": "Electromagnetism I",
+    "professor": "Dr. Mirmohammadi",
+    "year": "1403",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم_۱_الکترومغناطیس_۱،_استاد_میرکمالی_بهار_۴۰۳_1.pdf",
+    "uploaded_at": "2024-05-31T10:32:15Z"
+  },
+  {
+    "course": "Group Theory",
+    "professor": "Dr. Rezakhani",
+    "year": "1403",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/GT- final.pdf",
+    "uploaded_at": "2024-06-12T13:41:46Z"
+  },
+  {
+    "course": "Special Relativity",
+    "professor": "Dr. Abolhasani",
+    "year": "1403",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم‌نسبیت‌خاص_بهار۱۴۰۳_ابوالحسنی.pdf",
+    "uploaded_at": "2024-06-12T22:57:52Z"
+  },
+  {
+    "course": "Biophysics",
+    "professor": "Dr. Ajtahedi",
+    "year": "1384",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/exam_midterm.pdf",
+    "uploaded_at": "2024-06-13T15:52:49Z"
+  },
+  {
+    "course": "Quantum Information Science",
+    "professor": "Dr. Karimipour",
+    "year": "1402",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/QI-midterm exam.pdf",
+    "uploaded_at": "2024-06-14T20:58:25Z"
+  },
+  {
+    "course": "Quantum Information Science",
+    "professor": "Dr. Karimipour",
+    "year": "1402",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/QI-final axam.pdf",
+    "uploaded_at": "2024-06-14T20:59:48Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Baghram",
+    "year": "1401",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/EMII-FinalExam-Spring2022.pdf",
+    "uploaded_at": "2024-06-14T21:01:24Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Baghram",
+    "year": "1402",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/EM2-final-1402.pdf",
+    "uploaded_at": "2024-06-14T21:08:42Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Baghram",
+    "year": "1403",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/EM2-Final-1403-Spring.pdf",
+    "uploaded_at": "2024-06-15T13:23:37Z"
+  },
+  {
+    "course": "Statistical Physics III",
+    "professor": "Dr. Karimipour",
+    "year": "1403",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/CamScanner 06-18-2024 21.48.pdf",
+    "uploaded_at": "2024-06-19T11:59:03Z"
+  },
+  {
+    "course": "Statistical Physics II",
+    "professor": "Dr. Karimipour",
+    "year": "1402",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/CamScanner 06-18-2024 22.05.pdf",
+    "uploaded_at": "2024-06-19T12:01:46Z"
+  },
+  {
+    "course": "Analytical Mechanics II",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1403",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/مکتح2، پایانترم ۴۰۳.pdf",
+    "uploaded_at": "2024-06-21T13:41:58Z"
+  },
+  {
+    "course": "Introduction to Field Theory",
+    "professor": "Dr. Sedaghati",
+    "year": "1403",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Final-Take_home-QFT_1-SS-02-03-2.pdf",
+    "uploaded_at": "2024-06-21T15:27:43Z"
+  },
+  {
+    "course": "General Relativity",
+    "professor": "Dr. Rahvar",
+    "year": "1402",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/امتحان میان نسبیت عام.pdf",
+    "uploaded_at": "2024-11-14T20:15:02Z"
+  },
+  {
+    "course": "Mathematical Physics I",
+    "professor": "Dr. Mirmohammadi",
+    "year": "1402",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/امتحان میان ترم ریاضی-فیزیک۱ - 1401.pdf",
+    "uploaded_at": "2024-11-15T00:58:05Z"
+  },
+  {
+    "course": "Quantum Mechanics III",
+    "professor": "Dr. Rezakhani",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم کوانتوم ۳.pdf",
+    "uploaded_at": "2024-11-21T11:54:06Z"
+  },
+  {
+    "course": "Thermodynamics I",
+    "professor": "Dr. Karimipour",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم ترمو .pdf",
+    "uploaded_at": "2024-11-21T12:00:51Z"
+  },
+  {
+    "course": "Physics IV",
+    "professor": "Dr. Irajizade",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/4_5906947828759925724.pdf",
+    "uploaded_at": "2024-11-21T13:38:42Z"
+  },
+  {
+    "course": "Mathematical Physics I",
+    "professor": "Dr. Mirmohammadi",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم ریزفیز ۴۰۳.pdf",
+    "uploaded_at": "2024-11-21T13:55:27Z"
+  },
+  {
+    "course": "Quantum Computing Implementation",
+    "professor": "Dr. Mirmohammadi",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/CamScanner 11-24-2024 08.38.pdf",
+    "uploaded_at": "2024-11-24T08:48:14Z"
+  },
+  {
+    "course": "Quantum Computing & Information",
+    "professor": "Dr. Karimipour",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم رایانش۱.pdf",
+    "uploaded_at": "2024-11-29T13:13:49Z"
+  },
+  {
+    "course": "Thermodynamics I",
+    "professor": "Dr. Karimipour",
+    "year": "1402",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم ترمودینامیک ۱ بهار ۱۴۰۲.pdf",
+    "uploaded_at": "2025-01-12T13:50:38Z"
+  },
+  {
+    "course": "Physics III",
+    "professor": "Dr. Taghvinia",
+    "year": "1400",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/1400.11.03 Physics 3 Final Exam.pdf",
+    "uploaded_at": "2025-01-12T14:32:28Z"
+  },
+  {
+    "course": "Thermodynamics I",
+    "professor": "Dr. Karimipour",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم ترمو ۱.pdf",
+    "uploaded_at": "2025-01-13T17:24:28Z"
+  },
+  {
+    "course": "Mathematical Physics I",
+    "professor": "Dr. Mirmohammadi",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم ریزفیز پاییز ۴۰۳.pdf",
+    "uploaded_at": "2025-01-18T20:11:50Z"
+  },
+  {
+    "course": "Astrobiology",
+    "professor": "Dr. Rahvar",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/CamScanner 01-18-2025 20.13.pdf",
+    "uploaded_at": "2025-01-18T20:15:23Z"
+  },
+  {
+    "course": "Solid State Physics",
+    "professor": "Dr. Moghimi",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/امتحان پایان ترم حالت جامد.pdf",
+    "uploaded_at": "2025-01-18T20:22:14Z"
+  },
+  {
+    "course": "Elementary Particle Physics",
+    "professor": "Dr. Faraji",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/امتحان ذرات بنیادی مقدماتی.pdf",
+    "uploaded_at": "2025-01-19T12:00:53Z"
+  },
+  {
+    "course": "Quantum Mechanics III",
+    "professor": "Dr. Rezakhani",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/QM III- final.pdf",
+    "uploaded_at": "2025-01-19T12:04:06Z"
+  },
+  {
+    "course": "Observational Astronomy",
+    "professor": "Dr. Rezaei",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/CamScanner 01-19-2025 12.05.pdf",
+    "uploaded_at": "2025-01-19T12:09:05Z"
+  },
+  {
+    "course": "Electromagnetism I",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم الکمغ۱ پاییز ۴۰۳.pdf",
+    "uploaded_at": "2025-01-19T22:41:35Z"
+  },
+  {
+    "course": "Optics",
+    "professor": "Dr. Seyedrahhani",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/CamScanner 01-20-2025 11.42.pdf",
+    "uploaded_at": "2025-01-20T11:44:15Z"
+  },
+  {
+    "course": "Introduction to Manifold Theory",
+    "professor": "Dr. Faraji",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/CamScanner 01-24-2025 08.05.pdf",
+    "uploaded_at": "2025-01-24T08:08:42Z"
+  },
+  {
+    "course": "Analytical Mechanics I",
+    "professor": "Dr. Abolhasani",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم مکتح ۱.pdf",
+    "uploaded_at": "2025-01-26T23:03:42Z"
+  },
+  {
+    "course": "Neuroscience",
+    "professor": "Dr. Moghimi",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/neuro-final (1).pdf",
+    "uploaded_at": "2025-02-09T15:32:51Z"
+  },
+  {
+    "course": "Special Relativity",
+    "professor": "Dr. Abolhasani",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/SR_Mid_403.pdf",
+    "uploaded_at": "2025-04-22T22:05:57Z"
+  },
+  {
+    "course": "Special Relativity",
+    "professor": "Dr. Abolhasani",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/SR-midterm2-403.pdf",
+    "uploaded_at": "2025-04-22T22:06:51Z"
+  },
+  {
+    "course": "Physics IV",
+    "professor": "Dr. Khademi",
+    "year": "1402",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/phys4-mid.pdf",
+    "uploaded_at": "2025-05-12T17:53:41Z"
+  },
+  {
+    "course": "Thermodynamics II",
+    "professor": "Dr. Karimipour",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Thermo2mid.pdf",
+    "uploaded_at": "2025-05-12T23:51:27Z"
+  },
+  {
+    "course": "General Relativity",
+    "professor": "Dr. Rahvar",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Midterm.GR.pdf",
+    "uploaded_at": "2025-05-19T17:00:51Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم دوم الکمغ۲.pdf",
+    "uploaded_at": "2025-05-19T23:18:17Z"
+  },
+  {
+    "course": "Experimental Methods in Physics",
+    "professor": "Dr. Irajizade",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم روش‌های تجربی در فیزیک.pdf",
+    "uploaded_at": "2025-05-25T14:10:10Z"
+  },
+  {
+    "course": "Physics III",
+    "professor": "Dr. Baghram",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم دوم فیزیک ۳.pdf",
+    "uploaded_at": "2025-05-26T00:33:08Z"
+  },
+  {
+    "course": "Physics IV",
+    "professor": "Dr. Khademi",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم فیزیک۴ بهار ۴۰۴.pdf",
+    "uploaded_at": "2025-05-29T23:11:50Z"
+  },
+  {
+    "course": "Special Relativity",
+    "professor": "Dr. Abolhasani",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/امتحان نسبیت خاص - بهار ۱۴۰۴.pdf",
+    "uploaded_at": "2025-06-11T18:12:36Z"
+  },
+  {
+    "course": "Equations (Differential)",
+    "professor": "Dr. Beyrami",
+    "year": "۱۴۰۱",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم_معادلات_دیفرانسیل_بهار_۱۴۰۱.pdf",
+    "uploaded_at": "2025-06-11T18:17:31Z"
+  },
+  {
+    "course": "Physics II",
+    "professor": "Dr. Langari",
+    "year": "۱۴۰۱",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم فیزیک ۲ بهار ۱۴۰۱.pdf",
+    "uploaded_at": "2025-06-11T18:17:31Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Baghram",
+    "year": "۱۴۰۲",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم_الکترومغناطیس_۲_بهار_۱۴۰۲.pdf",
+    "uploaded_at": "2025-06-11T18:17:31Z"
+  },
+  {
+    "course": "Thermodynamics I",
+    "professor": "Dr. Karimipour",
+    "year": "۱۴۰۲",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم ترمودینامیک ۱ بهار ۱۴۰۲ (1).pdf",
+    "uploaded_at": "2025-06-11T18:17:31Z"
+  },
+  {
+    "course": "Quantum Mechanics I",
+    "professor": "Dr. Kargarian",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/QM1-Final.pdf",
+    "uploaded_at": "2025-08-31T00:55:39Z"
+  },
+  {
+    "course": null,
+    "professor": "Dr. Rezaei",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایانترم اخترفیزیک ۱.pdf",
+    "uploaded_at": "2025-08-31T08:54:24Z"
+  },
+  {
+    "course": "Thermodynamics I",
+    "professor": "Dr. Rezakhani",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/thermo1 final.pdf",
+    "uploaded_at": "2025-09-03T12:14:55Z"
+  },
+  {
+    "course": "Complex Systems",
+    "professor": "Dr. Rohani",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/CS.final 2025.pdf",
+    "uploaded_at": "2025-09-05T21:31:59Z"
+  },
+  {
+    "course": "Physics III",
+    "professor": "Dr. Baghram",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Physics3 Final.pdf",
+    "uploaded_at": "2025-09-05T21:39:10Z"
+  },
+  {
+    "course": "Thermodynamics II",
+    "professor": "Dr. Karimipour",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/tsm2.pdf",
+    "uploaded_at": "2025-09-05T21:44:10Z"
+  },
+  {
+    "course": "Introduction to Condensed Matter",
+    "professor": "Dr. Vaezi",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Condensed Matter F2025.pdf",
+    "uploaded_at": "2025-09-05T21:57:55Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1404",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/EMII-Final.pdf",
+    "uploaded_at": "2025-09-06T10:05:02Z"
+  },
+  {
+    "course": "Analytical Mechanics I",
+    "professor": "Dr. Abolhasani",
+    "year": "1403",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Classical_Mechanics_I_1403.pdf",
+    "uploaded_at": "2025-11-21T22:59:05Z"
+  },
+  {
+    "course": "Quantum Mechanics III",
+    "professor": "Dr. Rezakhani",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/QM III- midterm.pdf",
+    "uploaded_at": "2025-12-12T01:35:18Z"
+  },
+  {
+    "course": "Special Relativity",
+    "professor": "Dr. Baghram",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/SR MID (1).pdf",
+    "uploaded_at": "2025-12-14T13:36:35Z"
+  },
+  {
+    "course": "Quantum Mechanics I",
+    "professor": "Dr. Sedaghati",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/QM1-MID.pdf",
+    "uploaded_at": "2025-12-18T19:09:30Z"
+  },
+  {
+    "course": "Astrobiology",
+    "professor": "Dr. Rahvar",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Astrobiology - Midterm 40401.pdf",
+    "uploaded_at": "2025-12-23T11:37:26Z"
+  },
+  {
+    "course": "Thermodynamics III",
+    "professor": "Dr. Karimipour",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Thermo III MID.pdf",
+    "uploaded_at": "2025-12-23T11:42:56Z"
+  },
+  {
+    "course": "Electromagnetism I",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/EM1-MID.pdf",
+    "uploaded_at": "2025-12-25T11:20:46Z"
+  },
+  {
+    "course": "Thermodynamics I",
+    "professor": "Dr. Ajtahedi",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/CamScanner 12-23-25 20.22.pdf",
+    "uploaded_at": "2025-12-25T11:25:18Z"
+  },
+  {
+    "course": "Analytical Mechanics I",
+    "professor": "Dr. Abolhasani",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/پایان‌ترم تحلیلی 1 ابوالحسنی (1).pdf",
+    "uploaded_at": "2026-02-06T22:36:30Z"
+  },
+  {
+    "course": "Spectroscopy",
+    "professor": "Dr. Mashfegh",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Spectroscopy Take Home Exam - Bahman 1404.pdf",
+    "uploaded_at": "2026-02-09T19:48:47Z"
+  },
+  {
+    "course": "Vacuum Techniques",
+    "professor": "Dr. Akhavan",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/9003274071292976898_13879464531266.pdf",
+    "uploaded_at": "2026-02-09T19:49:35Z"
+  },
+  {
+    "course": "Quantum Mechanics III",
+    "professor": "Dr. Rezakhani",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/QM III- final- FA.pdf",
+    "uploaded_at": "2026-02-09T20:02:42Z"
+  },
+  {
+    "course": "Thermodynamics II",
+    "professor": "Dr. Rezakhani",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/TSM II- final.pdf",
+    "uploaded_at": "2026-02-09T20:04:30Z"
+  },
+  {
+    "course": "Quantum Mechanics II",
+    "professor": "Dr. Kargarian",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/سوالات آزمون پایان ترم.pdf",
+    "uploaded_at": "2026-02-09T20:05:51Z"
+  },
+  {
+    "course": "Waves",
+    "professor": "Dr. Khosravi",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/waves-1404.pdf",
+    "uploaded_at": "2026-02-09T20:09:22Z"
+  },
+  {
+    "course": "Special Relativity",
+    "professor": "Dr. Baghram",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/file (2) (1).pdf",
+    "uploaded_at": "2026-02-09T20:11:07Z"
+  },
+  {
+    "course": "Quantum Mechanics I",
+    "professor": "Dr. Sedaghati",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/FinalExam-QM-1-04-05-1.pdf",
+    "uploaded_at": "2026-02-09T20:16:56Z"
+  },
+  {
+    "course": "Fundamental Concepts & History of Physics",
+    "professor": "Dr. Baghram",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/FCCHP-Fall2025-FinalExam-TakeHome.pdf",
+    "uploaded_at": "2026-02-09T20:19:00Z"
+  },
+  {
+    "course": "Mathematical Physics I",
+    "professor": "Dr. Memarzadeh",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/MathPhysIFall2025-FinalExam.pdf",
+    "uploaded_at": "2026-02-09T20:21:38Z"
+  },
+  {
+    "course": "Analytical Mechanics II",
+    "professor": "Dr. Moghimi",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Final Exam Mech 2-04Online Version.pdf",
+    "uploaded_at": "2026-02-09T20:24:01Z"
+  },
+  {
+    "course": "Analytical Mechanics II",
+    "professor": "Dr. Moghimi",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Exam 5.pdf",
+    "uploaded_at": "2026-02-09T20:26:25Z"
+  },
+  {
+    "course": "Astrobiology",
+    "professor": "Dr. Rahvar",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/امتحان پایان ترم اختر زیست شناسی.pdf",
+    "uploaded_at": "2026-02-09T20:29:46Z"
+  },
+  {
+    "course": "Cosmology",
+    "professor": "Dr. Rahvar",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/_⁨امتحان پایان ترم کیهانشناسی⁩.pdf",
+    "uploaded_at": "2026-02-09T20:32:55Z"
+  },
+  {
+    "course": "Analytical Mechanics II",
+    "professor": "Dr. Moghimi",
+    "year": "1396",
+    "semester": null,
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/FinalMechII 96-97.pdf",
+    "uploaded_at": "2026-02-09T20:34:42Z"
+  },
+  {
+    "course": "Analytical Mechanics II",
+    "professor": "Dr. Moghimi",
+    "year": "1383",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/E2.pdf",
+    "uploaded_at": "2026-02-09T20:36:37Z"
+  },
+  {
+    "course": "Analytical Mechanics II",
+    "professor": "Dr. Moghimi",
+    "year": "1387",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Fin Exam-1.pdf",
+    "uploaded_at": "2026-02-09T20:37:27Z"
+  },
+  {
+    "course": "Introduction to Quantum Field Theory",
+    "professor": "Dr. Sedaghati",
+    "year": "1401",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Midterm-QFT_1-01-02-1.pdf",
+    "uploaded_at": "2026-02-13T22:45:52Z"
+  },
+  {
+    "course": "Quantum Mechanics III",
+    "professor": "Dr. Sedaghati",
+    "year": "1401",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Midterm-QM_3-01-02-1-TH.pdf",
+    "uploaded_at": "2026-02-13T22:46:41Z"
+  },
+  {
+    "course": "Quantum Mechanics III",
+    "professor": "Dr. Sedaghati",
+    "year": "1396",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Midterm-QM_III-WS-95-96-1.pdf",
+    "uploaded_at": "2026-02-13T22:52:04Z"
+  },
+  {
+    "course": "Introduction to Quantum Field Theory",
+    "professor": "Dr. Sedaghati",
+    "year": "1397",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Midtem-Exam-QFT_0-96-97-II.pdf",
+    "uploaded_at": "2026-02-13T23:08:31Z"
+  },
+  {
+    "course": "Introduction to Quantum Field Theory",
+    "professor": "Dr. Sedaghati",
+    "year": "1397",
+    "semester": "Spring",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Final-Exam-QFT_0-96-97-II.pdf",
+    "uploaded_at": "2026-02-13T23:14:25Z"
+  },
+  {
+    "course": "Thermodynamics & Statistical Mechanics III",
+    "professor": "Dr. Karimipour",
+    "year": "1404",
+    "semester": "Fall",
+    "exam_type": "Final",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/FinalExam-SM3-1404 (1).pdf",
+    "uploaded_at": "2026-02-14T01:18:45Z"
+  },
+  {
+    "course": "Electromagnetism I",
+    "professor": "Dr. Baghram",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/EMI-Spring2026-MidtermI.pdf",
+    "uploaded_at": "2026-06-10T10:56:40Z"
+  },
+  {
+    "course": "Electromagnetism I",
+    "professor": "Dr. Baghram",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/EMI-Spring2026-MidtermII.pdf",
+    "uploaded_at": "2026-06-10T10:57:21Z"
+  },
+  {
+    "course": "Quantum Field Theory",
+    "professor": "Dr. Ardehali",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/QFT review questions.pdf",
+    "uploaded_at": "2026-06-10T10:58:49Z"
+  },
+  {
+    "course": "Quantum Mechanics II",
+    "professor": "Dr. Sedaghati",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/MidTermExam-QM-2-04-05-2.pdf",
+    "uploaded_at": "2026-06-10T11:01:03Z"
+  },
+  {
+    "course": "Physics IV",
+    "professor": "Dr. Mashfegh",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میان_ترم_اول_فیزیک_۴_نیمسال_دوم_۱۴۰۴_دکتر_مشفق.pdf",
+    "uploaded_at": "2026-06-10T11:10:34Z"
+  },
+  {
+    "course": "Physics IV",
+    "professor": "Dr. Mashfegh",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/Phys. 4 - MidTermI TAKE HOME Part .pdf",
+    "uploaded_at": "2026-06-10T11:14:06Z"
+  },
+  {
+    "course": "Special Relativity",
+    "professor": "Dr. Faraji",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/exam-4.pdf",
+    "uploaded_at": "2026-06-10T11:15:18Z"
+  },
+  {
+    "course": "Thermodynamics I",
+    "professor": "Dr. Rezakhani",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/TSM I- midterm.pdf",
+    "uploaded_at": "2026-06-10T11:15:49Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میان ترم اول.pdf",
+    "uploaded_at": "2026-06-10T11:16:20Z"
+  },
+  {
+    "course": "Experimental Methods in Physics",
+    "professor": "Dr. Irajizade",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/_⁨امتحان_اول_درس_روشهای_تجربی_در_فیزیک1405⁩.pdf",
+    "uploaded_at": "2026-06-10T11:17:49Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Bahmanabadi",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میان ترم دوم.pdf",
+    "uploaded_at": "2026-06-19T10:48:30Z"
+  },
+  {
+    "course": "Complex Systems",
+    "professor": "Dr. Rohani",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/problems for complex systems course.pdf",
+    "uploaded_at": "2026-06-21T15:05:34Z"
+  },
+  {
+    "course": "Probability & Applications",
+    "professor": "Dr. Ghajar",
+    "year": null,
+    "semester": null,
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم اول احتمال و کاربرد آن.pdf",
+    "uploaded_at": "2026-06-21T15:08:31Z"
+  },
+  {
+    "course": "Selected Topics in Quantum Computing & Information",
+    "professor": "Dr. Memarzadeh",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/QIS-Midterm2026.pdf",
+    "uploaded_at": "2026-06-21T15:12:38Z"
+  },
+  {
+    "course": "Algebra I",
+    "professor": "Dr. Abbaszadeh",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/آزمون میان ترم جبر 1 (1) (1).pdf",
+    "uploaded_at": "2026-06-21T21:26:48Z"
+  },
+  {
+    "course": "Probability & Applications",
+    "professor": "Dr. Ghajar",
+    "year": "1405",
+    "semester": "Spring",
+    "exam_type": "Midterm",
     "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم دوم احتمال و کاربرد آن.pdf",
-    "uploaded_at": "2026-06-25T01:11:17.497630Z"
+    "uploaded_at": "2026-06-25T00:32:39Z"
   }
 ]
