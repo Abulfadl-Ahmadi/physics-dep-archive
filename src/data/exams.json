@@ -16,5 +16,23 @@
     "exam_type": "Midterm",
     "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/AbstractAlgebra-Midterm-Spring2026.pdf",
     "uploaded_at": "2026-06-25T00:50:23.106595Z"
+  },
+  {
+    "course": "Analytical Mechanics II",
+    "professor": "Dr. Abolhasani",
+    "year": "2026",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/AM2-Midterm-Spring2026.pdf",
+    "uploaded_at": "2026-06-25T01:10:42.960107Z"
+  },
+  {
+    "course": "Probability and Applications",
+    "professor": "Dr. Qajar",
+    "year": "2026",
+    "semester": "Spring",
+    "exam_type": "Midterm 2",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم دوم احتمال و کاربرد آن.pdf",
+    "uploaded_at": "2026-06-25T01:11:17.497630Z"
   }
 ]
