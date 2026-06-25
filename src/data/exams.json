@@ -7,5 +7,14 @@
     "exam_type": "Midterm",
     "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/QIS-Midterm2026.pdf",
     "uploaded_at": "2026-06-25T00:13:11.725150Z"
+  },
+  {
+    "course": "Abstract Algebra I",
+    "professor": "Dr. Abbaszadeh",
+    "year": "2026",
+    "semester": "Spring",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/AbstractAlgebra-Midterm-Spring2026.pdf",
+    "uploaded_at": "2026-06-25T00:50:23.106595Z"
   }
 ]
