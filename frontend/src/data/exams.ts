@@ -1,6 +1,33 @@
 import { Exam } from '@/types/exam'
 
-export const examsData: Exam[] = [
+let cachedExams: Exam[] | undefined = undefined
+let loadError: string | null = null
+
+export async function getExams(): Promise<{ exams: Exam[]; error: string | null }> {
+  if (cachedExams) {
+    return { exams: cachedExams, error: loadError }
+  }
+
+  let exams: Exam[]
+  try {
+    const resp = await fetch('./exams.json')
+    if (resp.ok) {
+      exams = await resp.json()
+    } else {
+      exams = sampleExams
+      loadError = 'exams.json not found — showing sample data'
+    }
+  } catch {
+    exams = sampleExams
+    loadError = 'Failed to load — showing sample data'
+  }
+
+  cachedExams = exams
+  return { exams, error: loadError }
+}
+
+// Fallback sample data
+const sampleExams: Exam[] = [
   {
     course: 'Mathematical Physics',
     professor: 'Dr. Ahmad Rezaei',
@@ -9,50 +36,5 @@ export const examsData: Exam[] = [
     exam_type: 'Final',
     file_url: 'https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/math-physics-final-2023.pdf',
     uploaded_at: '2024-01-15T10:30:00Z',
-  },
-  {
-    course: 'Quantum Mechanics I',
-    professor: 'Dr. Maryam Hosseini',
-    year: '2023',
-    semester: 'Spring',
-    exam_type: 'Midterm',
-    file_url: 'https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/qm1-midterm-2023.pdf',
-    uploaded_at: '2024-02-20T14:00:00Z',
-  },
-  {
-    course: 'Classical Mechanics',
-    professor: 'Dr. Ali Mohammadi',
-    year: '2022',
-    semester: 'Fall',
-    exam_type: 'Final',
-    file_url: 'https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/classical-mech-final-2022.pdf',
-    uploaded_at: '2024-03-01T09:15:00Z',
-  },
-  {
-    course: 'Electrodynamics',
-    professor: 'Dr. Fatemeh Kazemi',
-    year: '2024',
-    semester: 'Spring',
-    exam_type: 'Quiz',
-    file_url: 'https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/electrodynamics-quiz-2024.pdf',
-    uploaded_at: '2024-04-10T16:45:00Z',
-  },
-  {
-    course: 'Thermodynamics',
-    professor: 'Dr. Ahmad Rezaei',
-    year: '2022',
-    semester: 'Summer',
-    exam_type: 'Final',
-    file_url: 'https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/thermo-final-2022.pdf',
-    uploaded_at: '2024-05-05T11:30:00Z',
-  },
-  {
-    course: 'Linear Algebra for Physicists',
-    professor: 'Dr. Sara Ghasemi',
-    year: '2024',
-    semester: 'Fall',
-    exam_type: 'Midterm',
-    file_url: 'https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/linear-algebra-midterm-2024.pdf',
-    uploaded_at: '2024-06-01T08:00:00Z',
   },
 ]

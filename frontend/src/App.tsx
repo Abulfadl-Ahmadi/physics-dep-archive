@@ -1,12 +1,15 @@
-import { useState, useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { Search, FileText, Moon, Sun, Filter, X } from 'lucide-react'
 import { matchSorter } from 'match-sorter'
 import { cn } from '@/lib/utils'
 import { ExamCard } from '@/components/ExamCard'
 import { FilterBar } from '@/components/FilterBar'
-import { examsData } from '@/data/exams'
+import { getExams } from '@/data/exams'
+import type { Exam } from '@/types/exam'
 
 export default function App() {
+  const [exams, setExams] = useState<Exam[]>([])
+  const [loading, setLoading] = useState(true)
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCourse, setSelectedCourse] = useState<string | null>(null)
   const [selectedProfessor, setSelectedProfessor] = useState<string | null>(null)
@@ -16,31 +19,38 @@ export default function App() {
   const [dark, setDark] = useState(false)
   const [showFilters, setShowFilters] = useState(false)
 
+  useEffect(() => {
+    getExams().then(({ exams }) => {
+      setExams(exams)
+      setLoading(false)
+    })
+  }, [])
+
   // Derive unique filter options
   const courses = useMemo(
-    () => [...new Set(examsData.map((e) => e.course).filter((x): x is string => x !== null))].sort(),
-    []
+    () => [...new Set(exams.map((e) => e.course).filter((x): x is string => x !== null))].sort(),
+    [exams]
   )
   const professors = useMemo(
-    () => [...new Set(examsData.map((e) => e.professor).filter((x): x is string => x !== null))].sort(),
-    []
+    () => [...new Set(exams.map((e) => e.professor).filter((x): x is string => x !== null))].sort(),
+    [exams]
   )
   const years = useMemo(
-    () => [...new Set(examsData.map((e) => e.year).filter((x): x is string => x !== null))].sort(),
-    []
+    () => [...new Set(exams.map((e) => e.year).filter((x): x is string => x !== null))].sort(),
+    [exams]
   )
   const semesters = useMemo(
-    () => [...new Set(examsData.map((e) => e.semester).filter((x): x is string => x !== null))].sort(),
-    []
+    () => [...new Set(exams.map((e) => e.semester).filter((x): x is string => x !== null))].sort(),
+    [exams]
   )
   const examTypes = useMemo(
-    () => [...new Set(examsData.map((e) => e.exam_type).filter((x): x is string => x !== null))].sort(),
-    []
+    () => [...new Set(exams.map((e) => e.exam_type).filter((x): x is string => x !== null))].sort(),
+    [exams]
   )
 
   // Combined filtering
   const filteredExams = useMemo(() => {
-    let results = examsData
+    let results = exams
 
     if (searchQuery) {
       results = matchSorter(results, searchQuery, {
@@ -66,7 +76,7 @@ export default function App() {
     }
 
     return results
-  }, [searchQuery, selectedCourse, selectedProfessor, selectedYear, selectedSemester, selectedExamType])
+  }, [exams, searchQuery, selectedCourse, selectedProfessor, selectedYear, selectedSemester, selectedExamType])
 
   const activeFilterCount = [selectedCourse, selectedProfessor, selectedYear, selectedSemester, selectedExamType].filter(Boolean).length
 
@@ -168,33 +178,41 @@ export default function App() {
 
         {/* Results */}
         <main className="container mx-auto px-4 pb-12">
-          <div className="mb-4 flex items-center justify-between">
-            <p className="text-sm text-muted-foreground">
-              {filteredExams.length} exam{filteredExams.length !== 1 ? 's' : ''} found
-            </p>
-            {activeFilterCount > 0 && (
-              <button
-                onClick={clearAllFilters}
-                className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <X className="h-3 w-3" />
-                Clear all
-              </button>
-            )}
-          </div>
-
-          {filteredExams.length === 0 ? (
-            <div className="flex flex-col items-center justify-center py-20 text-muted-foreground">
-              <FileText className="h-12 w-12 mb-4 opacity-50" />
-              <p className="text-lg font-medium">No exams found</p>
-              <p className="text-sm">Try adjusting your search or filters</p>
+          {loading ? (
+            <div className="flex items-center justify-center py-20">
+              <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
             </div>
           ) : (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredExams.map((exam, idx) => (
-                <ExamCard key={idx} exam={exam} />
-              ))}
-            </div>
+            <>
+              <div className="mb-4 flex items-center justify-between">
+                <p className="text-sm text-muted-foreground">
+                  {filteredExams.length} exam{filteredExams.length !== 1 ? 's' : ''} found
+                </p>
+                {activeFilterCount > 0 && (
+                  <button
+                    onClick={clearAllFilters}
+                    className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <X className="h-3 w-3" />
+                    Clear all
+                  </button>
+                )}
+              </div>
+
+              {filteredExams.length === 0 ? (
+                <div className="flex flex-col items-center justify-center py-20 text-muted-foreground">
+                  <FileText className="h-12 w-12 mb-4 opacity-50" />
+                  <p className="text-lg font-medium">No exams found</p>
+                  <p className="text-sm">Try adjusting your search or filters</p>
+                </div>
+              ) : (
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {filteredExams.map((exam, idx) => (
+                    <ExamCard key={idx} exam={exam} />
+                  ))}
+                </div>
+              )}
+            </>
           )}
         </main>
       </div>
