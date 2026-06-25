@@ -6,15 +6,30 @@ interface ExamCardProps {
   exam: Exam
 }
 
+function examSlug(exam: Exam): string {
+  const parts = [
+    exam.course?.replace(/\s+/g, '-').toLowerCase() || 'unknown',
+    exam.exam_type?.toLowerCase() || 'unknown',
+    exam.year || '0000',
+    exam.semester?.toLowerCase() || 'unknown',
+  ]
+  return parts.join('-')
+}
+
 export function ExamCard({ exam }: ExamCardProps) {
+  const slug = examSlug(exam)
+
   return (
     <div className="group rounded-lg border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md hover:border-primary/50">
       <div className="p-5">
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-lg leading-tight truncate">
+            <a
+              href={`#${slug}`}
+              className="font-semibold text-lg leading-tight truncate block hover:text-primary transition-colors"
+            >
               {exam.course || 'Unknown Course'}
-            </h3>
+            </a>
             {exam.professor && (
               <div className="flex items-center gap-1.5 mt-2 text-sm text-muted-foreground">
                 <User className="h-3.5 w-3.5" />
@@ -50,15 +65,23 @@ export function ExamCard({ exam }: ExamCardProps) {
         </div>
 
         {exam.file_url && (
-          <a
-            href={exam.file_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-          >
-            <FileStack className="h-4 w-4" />
-            View Paper
-          </a>
+          <div className="mt-4 flex gap-2">
+            <a
+              href={`#${slug}`}
+              className="flex-1 flex items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent transition-colors"
+            >
+              Details
+            </a>
+            <a
+              href={exam.file_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              <FileStack className="h-4 w-4" />
+              View
+            </a>
+          </div>
         )}
       </div>
     </div>

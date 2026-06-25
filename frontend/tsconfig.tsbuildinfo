@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/examcard.tsx","./src/components/filterbar.tsx","./src/data/exams.ts","./src/lib/utils.ts","./src/types/exam.ts","./vite.config.ts"],"version":"5.9.3"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/examcard.tsx","./src/components/examtable.tsx","./src/components/filterbar.tsx","./src/data/exams.ts","./src/lib/utils.ts","./src/types/exam.ts","./vite.config.ts"],"version":"5.9.3"}
