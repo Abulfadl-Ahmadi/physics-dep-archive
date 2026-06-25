@@ -4,8 +4,11 @@ sync.py — Local sync tool for exam archive.
 Uploads a PDF/image to ArvanCloud S3, extracts metadata via an LLM agent,
 appends to exams.json, and auto-pushes to GitHub.
 
+Also supports importing from Telegram channel exports (no LLM vision needed).
+
 Usage:
     python sync.py --file="./path/to/exam.pdf"
+    python sync.py --import-telegram="./ChatExport_2026-06-25"
 """
 
 import argparse
@@ -186,6 +189,31 @@ def update_exams_json(metadata: dict, file_url: str, json_path: str = "src/data/
     print(f"[✓] Added entry to {json_path}")
 
 
+def import_telegram_export(export_dir: str, json_path: str):
+    """Import exams from a Telegram channel export directory."""
+    result_file = os.path.join(export_dir, "result.json")
+    if not os.path.isfile(result_file):
+        print(f"[error] result.json not found in {export_dir}")
+        sys.exit(1)
+
+    # Import the parser module
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    parser_path = os.path.join(script_dir, "parse_telegram_export.py")
+    if not os.path.isfile(parser_path):
+        print(f"[error] parse_telegram_export.py not found at {parser_path}")
+        sys.exit(1)
+
+    import subprocess
+    result = subprocess.run(
+        [sys.executable, parser_path, "--input=" + result_file, "--output=" + json_path],
+        capture_output=True,
+        text=True,
+    )
+    print(result.stdout, end="")
+    if result.stderr:
+        print(result.stderr, file=sys.stderr)
+
+
 def auto_git_push(file_path: str, json_path: str):
     """Stage changes and push to GitHub."""
     # Find repo root
@@ -201,7 +229,8 @@ def auto_git_push(file_path: str, json_path: str):
     filename = os.path.basename(file_path)
 
     git("add", json_path, cwd=git_root)
-    git("add", file_path, cwd=git_root)
+    if os.path.isfile(file_path):
+        git("add", file_path, cwd=git_root)
 
     staged = git("diff", "--cached", "--porcelain", cwd=git_root)
     if staged:
@@ -218,10 +247,20 @@ def auto_git_push(file_path: str, json_path: str):
 
 def main():
     parser = argparse.ArgumentParser(description="Upload exam paper to ArvanCloud and sync with GitHub.")
-    parser.add_argument("--file", required=True, help="Path to the exam PDF or image file")
+    parser.add_argument("--file", help="Path to the exam PDF or image file")
     parser.add_argument("--json", default="src/data/exams.json", help="Path to exams.json")
     parser.add_argument("--no-git", action="store_true", help="Skip automatic git push")
+    parser.add_argument("--import-telegram", metavar="EXPORT_DIR", help="Import exams from Telegram export directory (contains result.json)")
     args = parser.parse_args()
+
+    if args.import_telegram:
+        import_telegram_export(args.import_telegram, args.json)
+        if not args.no_git:
+            auto_git_push(args.json, args.json)
+        return
+
+    if not args.file:
+        parser.error("--file is required (or use --import-telegram)")
 
     file_path = os.path.abspath(args.file)
 
