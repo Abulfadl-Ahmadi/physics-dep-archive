@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { Search, FileText, Moon, Sun, Filter, X, LayoutGrid, Table, ArrowLeft, Calendar, GraduationCap, User, FileStack } from 'lucide-react'
+import { Search, FileText, Moon, Sun, Filter, X, LayoutGrid, Table, ArrowLeft, Calendar, GraduationCap, User, FileStack, Send, Bug, Clock } from 'lucide-react'
 import { matchSorter } from 'match-sorter'
 import { cn } from '@/lib/utils'
 import { ExamCard } from '@/components/ExamCard'
@@ -18,6 +18,95 @@ function examSlug(exam: Exam): string {
     exam.semester?.toLowerCase() || 'unknown',
   ]
   return parts.join('-')
+}
+
+interface FooterProps {
+  lastUpdated: string
+}
+
+function Footer({ lastUpdated }: FooterProps) {
+  return (
+    <footer className="border-t bg-muted/20 py-8 text-sm text-muted-foreground mt-auto">
+      <div className="container mx-auto px-4">
+        <div className="grid gap-8 md:grid-cols-3">
+          {/* Contribute section */}
+          <div className="flex flex-col gap-3">
+            <div className="flex items-center gap-2 text-foreground font-semibold">
+              <Send className="h-4 w-4 text-primary" />
+              <h4>Contribute Exam Papers</h4>
+            </div>
+            <p className="leading-relaxed">
+              If you have any past exam papers, we would appreciate it if you could send them to one of our admins on Telegram:
+            </p>
+            <div className="flex flex-wrap gap-2 mt-1">
+              <a
+                href="https://t.me/ZZAA1383"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md bg-background hover:bg-accent text-xs px-3 py-1.5 text-foreground transition-colors border font-medium"
+              >
+                @ZZAA1383
+              </a>
+              <a
+                href="https://t.me/Asra_Rezafadaei"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md bg-background hover:bg-accent text-xs px-3 py-1.5 text-foreground transition-colors border font-medium"
+              >
+                @Asra_Rezafadaei
+              </a>
+              <a
+                href="https://t.me/abul_ah"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md bg-background hover:bg-accent text-xs px-3 py-1.5 text-foreground transition-colors border font-medium"
+              >
+                @abul_ah
+              </a>
+            </div>
+          </div>
+
+          {/* Bug report section */}
+          <div className="flex flex-col gap-3">
+            <div className="flex items-center gap-2 text-foreground font-semibold">
+              <Bug className="h-4 w-4 text-primary" />
+              <h4>Report Bugs & Feedback</h4>
+            </div>
+            <p className="leading-relaxed">
+              To report bugs, errors, or website issues, please contact our admin on Telegram:
+            </p>
+            <div className="flex flex-wrap gap-2 mt-1">
+              <a
+                href="https://t.me/abul_ah"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md bg-background hover:bg-accent text-xs px-3 py-1.5 text-foreground transition-colors border font-medium"
+              >
+                @abul_ah
+              </a>
+            </div>
+          </div>
+
+          {/* Last update section */}
+          <div className="flex flex-col justify-between gap-3">
+            <div>
+              <div className="flex items-center gap-2 text-foreground font-semibold mb-3">
+                <FileText className="h-4 w-4 text-primary" />
+                <h4>Physics Exam Archive</h4>
+              </div>
+              <p className="leading-relaxed">
+                An open repository of past examination papers for physics students.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 text-xs pt-4 border-t border-border/40 md:border-t-0 md:pt-0">
+              <Clock className="h-3.5 w-3.5" />
+              <span>Last updated: <span className="font-semibold text-foreground">{lastUpdated}</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
 }
 
 export default function App() {
@@ -124,6 +213,22 @@ export default function App() {
 
   const activeFilterCount = [selectedCourse, selectedProfessor, selectedYear, selectedSemester, selectedExamType].filter(Boolean).length
 
+  const lastUpdatedDate = useMemo(() => {
+    if (exams.length === 0) return 'July 17, 2026'
+    const dates = exams
+      .map((e) => e.uploaded_at)
+      .filter((d): d is string => !!d)
+      .map((d) => new Date(d).getTime())
+      .filter((t) => !isNaN(t))
+    if (dates.length === 0) return 'July 17, 2026'
+    const maxTime = Math.max(...dates)
+    return new Date(maxTime).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  }, [exams])
+
   const clearAllFilters = () => {
     setSelectedCourse(null)
     setSelectedProfessor(null)
@@ -137,7 +242,7 @@ export default function App() {
   if (activeExam) {
     return (
       <div className={cn(dark && 'dark')}>
-        <div className="min-h-screen bg-background text-foreground">
+        <div className="min-h-screen bg-background text-foreground flex flex-col">
           <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
               <button
@@ -157,7 +262,7 @@ export default function App() {
             </div>
           </header>
 
-          <main className="container mx-auto px-4 py-12 max-w-3xl">
+          <main className="container mx-auto px-4 py-12 max-w-3xl flex-grow">
             <div className="rounded-lg border bg-card p-8">
               <h1 className="text-2xl font-bold mb-2">
                 {activeExam.course || 'Unknown Course'}
@@ -224,6 +329,8 @@ export default function App() {
               )}
             </div>
           </main>
+
+          <Footer lastUpdated={lastUpdatedDate} />
         </div>
       </div>
     )
@@ -232,7 +339,7 @@ export default function App() {
   // ---- Main List Page ----
   return (
     <div className={cn(dark && 'dark')}>
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-background text-foreground flex flex-col">
         {/* Header */}
         <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
           <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -342,7 +449,7 @@ export default function App() {
         </section>
 
         {/* Results */}
-        <main className="container mx-auto px-4 pb-12">
+        <main className="container mx-auto px-4 pb-12 flex-grow">
           {loading ? (
             <div className="flex items-center justify-center py-20">
               <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
@@ -382,6 +489,8 @@ export default function App() {
             </>
           )}
         </main>
+
+        <Footer lastUpdated={lastUpdatedDate} />
       </div>
     </div>
   )
