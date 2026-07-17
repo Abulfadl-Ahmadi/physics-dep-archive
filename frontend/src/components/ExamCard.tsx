@@ -26,7 +26,7 @@ export function ExamCard({ exam }: ExamCardProps) {
           <div className="flex-1 min-w-0">
             <a
               href={`#${slug}`}
-              className="font-semibold text-lg leading-tight truncate block hover:text-primary transition-colors"
+              className="font-semibold break-words text-lg leading-tight truncate block hover:text-primary transition-colors"
             >
               {exam.course || 'Unknown Course'}
             </a>

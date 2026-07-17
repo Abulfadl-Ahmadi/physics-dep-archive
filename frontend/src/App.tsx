@@ -292,11 +292,11 @@ export default function App() {
                     className={cn(
                       'inline-block rounded-full px-2.5 py-0.5 text-xs font-medium',
                       activeExam.exam_type === 'Final' &&
-                        'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
+                      'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
                       activeExam.exam_type === 'Midterm' &&
-                        'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+                      'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
                       activeExam.exam_type === 'Quiz' &&
-                        'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                      'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
                     )}
                   >
                     {activeExam.exam_type}
@@ -480,7 +480,9 @@ export default function App() {
               ) : viewMode === 'card' ? (
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {filteredExams.map((exam, idx) => (
-                    <ExamCard key={idx} exam={exam} />
+                    <div key={idx} className="min-w-0">  {/* اضافه کردن کلاس به آیتم */}
+                      <ExamCard exam={exam} />
+                    </div>
                   ))}
                 </div>
               ) : (
