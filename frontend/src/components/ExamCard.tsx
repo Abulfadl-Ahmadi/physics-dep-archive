@@ -1,9 +1,13 @@
 import { Exam } from '@/types/exam'
 import { cn } from '@/lib/utils'
 import { User, Calendar, GraduationCap, FileStack } from 'lucide-react'
+import { translations, type Language } from '@/i18n'
+import { localized } from '@/lib/localize'
 
 interface ExamCardProps {
   exam: Exam
+  language: Language
+  t: (typeof translations)[Language]
 }
 
 function examSlug(exam: Exam): string {
@@ -16,7 +20,7 @@ function examSlug(exam: Exam): string {
   return parts.join('-')
 }
 
-export function ExamCard({ exam }: ExamCardProps) {
+export function ExamCard({ exam, language, t }: ExamCardProps) {
   const slug = examSlug(exam)
 
   return (
@@ -28,12 +32,12 @@ export function ExamCard({ exam }: ExamCardProps) {
               href={`#${slug}`}
               className="font-semibold break-words text-lg leading-tight truncate block hover:text-primary transition-colors"
             >
-              {exam.course || 'Unknown Course'}
+              {localized(exam.course, language) || t.unknownCourse}
             </a>
             {exam.professor && (
               <div className="flex items-center gap-1.5 mt-2 text-sm text-muted-foreground">
                 <User className="h-3.5 w-3.5" />
-                <span className="truncate">{exam.professor}</span>
+                <span className="truncate">{localized(exam.professor, language)}</span>
               </div>
             )}
           </div>
@@ -44,7 +48,7 @@ export function ExamCard({ exam }: ExamCardProps) {
               exam.exam_type === 'Midterm' && 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
               exam.exam_type === 'Quiz' && 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
             )}>
-              {exam.exam_type}
+              {localized(exam.exam_type, language)}
             </span>
           )}
         </div>
@@ -59,7 +63,7 @@ export function ExamCard({ exam }: ExamCardProps) {
           {exam.semester && (
             <span className="flex items-center gap-1">
               <GraduationCap className="h-3 w-3" />
-              {exam.semester}
+              {localized(exam.semester, language)}
             </span>
           )}
         </div>
@@ -70,7 +74,7 @@ export function ExamCard({ exam }: ExamCardProps) {
               href={`#${slug}`}
               className="flex-1 flex items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent transition-colors"
             >
-              Details
+              {t.details}
             </a>
             <a
               href={exam.file_url}
@@ -79,7 +83,7 @@ export function ExamCard({ exam }: ExamCardProps) {
               className="flex-1 flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
             >
               <FileStack className="h-4 w-4" />
-              View
+              {t.view}
             </a>
           </div>
         )}

@@ -1,9 +1,13 @@
 import { Exam } from '@/types/exam'
 import { ExternalLink } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { translations, type Language } from '@/i18n'
+import { localized } from '@/lib/localize'
 
 interface ExamTableProps {
   exams: Exam[]
+  language: Language
+  t: (typeof translations)[Language]
 }
 
 function examSlug(exam: Exam): string {
@@ -16,19 +20,19 @@ function examSlug(exam: Exam): string {
   return parts.join('-')
 }
 
-export function ExamTable({ exams }: ExamTableProps) {
+export function ExamTable({ exams, language, t }: ExamTableProps) {
   return (
     <div className="rounded-lg border overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b bg-muted/50">
-              <th className="px-4 py-3 text-left font-medium">Course</th>
-              <th className="px-4 py-3 text-left font-medium">Professor</th>
-              <th className="px-4 py-3 text-left font-medium">Year</th>
-              <th className="px-4 py-3 text-left font-medium">Semester</th>
-              <th className="px-4 py-3 text-left font-medium">Type</th>
-              <th className="px-4 py-3 text-right font-medium">Link</th>
+              <th className="px-4 py-3 text-left font-medium">{t.courseLabel}</th>
+              <th className="px-4 py-3 text-left font-medium">{t.professorLabel}</th>
+              <th className="px-4 py-3 text-left font-medium">{t.yearLabel}</th>
+              <th className="px-4 py-3 text-left font-medium">{t.semesterLabel}</th>
+              <th className="px-4 py-3 text-left font-medium">{t.typeLabel}</th>
+              <th className="px-4 py-3 text-right font-medium">{t.linkLabel}</th>
             </tr>
           </thead>
           <tbody>
@@ -42,17 +46,17 @@ export function ExamTable({ exams }: ExamTableProps) {
                     href={`#${examSlug(exam)}`}
                     className="hover:text-primary hover:underline transition-colors"
                   >
-                    {exam.course || '—'}
+                    {localized(exam.course, language) || '—'}
                   </a>
                 </td>
                 <td className="px-4 py-3 text-muted-foreground">
-                  {exam.professor || '—'}
+                  {localized(exam.professor, language) || '—'}
                 </td>
                 <td className="px-4 py-3 text-muted-foreground">
                   {exam.year || '—'}
                 </td>
                 <td className="px-4 py-3 text-muted-foreground">
-                  {exam.semester || '—'}
+                  {localized(exam.semester, language) || '—'}
                 </td>
                 <td className="px-4 py-3">
                   {exam.exam_type && (
@@ -67,7 +71,7 @@ export function ExamTable({ exams }: ExamTableProps) {
                           'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
                       )}
                     >
-                      {exam.exam_type}
+                      {localized(exam.exam_type, language)}
                     </span>
                   )}
                 </td>
@@ -80,7 +84,7 @@ export function ExamTable({ exams }: ExamTableProps) {
                       className="inline-flex items-center gap-1 text-primary hover:underline"
                     >
                       <ExternalLink className="h-3.5 w-3.5" />
-                      <span className="hidden sm:inline">View</span>
+                      <span className="hidden sm:inline">{t.view}</span>
                     </a>
                   ) : (
                     <span className="text-muted-foreground">—</span>

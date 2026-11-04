@@ -1,7 +1,9 @@
 import { cn } from '@/lib/utils'
 import { ChevronDown } from 'lucide-react'
+import { translations, type Language } from '@/i18n'
 
 interface FilterBarProps {
+  t: (typeof translations)[Language]
   courses: string[]
   professors: string[]
   years: string[]
@@ -53,6 +55,7 @@ function Select({
 }
 
 export function FilterBar({
+  t,
   courses,
   professors,
   years,
@@ -72,11 +75,11 @@ export function FilterBar({
   return (
     <div className="mt-4 rounded-lg border bg-muted/20 p-4">
       <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-        <Select label="Course" value={selectedCourse} options={courses} onChange={onCourseChange} />
-        <Select label="Professor" value={selectedProfessor} options={professors} onChange={onProfessorChange} />
-        <Select label="Year" value={selectedYear} options={years} onChange={onYearChange} />
-        <Select label="Semester" value={selectedSemester} options={semesters} onChange={onSemesterChange} />
-        <Select label="Exam Type" value={selectedExamType} options={examTypes} onChange={onExamTypeChange} />
+        <Select label={t.allCourses} value={selectedCourse} options={courses} onChange={onCourseChange} />
+        <Select label={t.allProfessors} value={selectedProfessor} options={professors} onChange={onProfessorChange} />
+        <Select label={t.allYears} value={selectedYear} options={years} onChange={onYearChange} />
+        <Select label={t.allSemesters} value={selectedSemester} options={semesters} onChange={onSemesterChange} />
+        <Select label={t.allExamTypes} value={selectedExamType} options={examTypes} onChange={onExamTypeChange} />
       </div>
     </div>
   )

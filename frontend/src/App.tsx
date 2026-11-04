@@ -7,6 +7,8 @@ import { ExamTable } from '@/components/ExamTable'
 import { FilterBar } from '@/components/FilterBar'
 import { getExams } from '@/data/exams'
 import type { Exam } from '@/types/exam'
+import { translations, type Language } from '@/i18n'
+import { localized } from '@/lib/localize'
 
 type ViewMode = 'card' | 'table'
 
@@ -22,9 +24,10 @@ function examSlug(exam: Exam): string {
 
 interface FooterProps {
   lastUpdated: string
+  t: (typeof translations)[Language]
 }
 
-function Footer({ lastUpdated }: FooterProps) {
+function Footer({ lastUpdated, t }: FooterProps) {
   return (
     <footer className="border-t bg-muted/20 py-8 text-sm text-muted-foreground mt-auto">
       <div className="container mx-auto px-4">
@@ -33,10 +36,10 @@ function Footer({ lastUpdated }: FooterProps) {
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2 text-foreground font-semibold">
               <Send className="h-4 w-4 text-primary" />
-              <h4>Contribute Exam Papers</h4>
+              <h4>{t.contribute}</h4>
             </div>
             <p className="leading-relaxed">
-              If you have any past exam papers, we would appreciate it if you could send them to one of our admins on Telegram:
+              {t.contributeText}
             </p>
             <div className="flex flex-wrap gap-2 mt-1">
               <a
@@ -70,10 +73,10 @@ function Footer({ lastUpdated }: FooterProps) {
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2 text-foreground font-semibold">
               <Bug className="h-4 w-4 text-primary" />
-              <h4>Report Bugs & Feedback</h4>
+              <h4>{t.report}</h4>
             </div>
             <p className="leading-relaxed">
-              To report bugs, errors, or website issues, please contact our admin on Telegram:
+              {t.reportText}
             </p>
             <div className="flex flex-wrap gap-2 mt-1">
               <a
@@ -92,15 +95,15 @@ function Footer({ lastUpdated }: FooterProps) {
             <div>
               <div className="flex items-center gap-2 text-foreground font-semibold mb-3">
                 <FileText className="h-4 w-4 text-primary" />
-                <h4>Physics Exam Archive</h4>
+                <h4>{t.physicsArchive}</h4>
               </div>
               <p className="leading-relaxed">
-                An open repository of past examination papers for physics students.
+                {t.archiveDescription}
               </p>
             </div>
             <div className="flex items-center gap-2 text-xs pt-4 border-t border-border/40 md:border-t-0 md:pt-0">
               <Clock className="h-3.5 w-3.5" />
-              <span>Last updated: <span className="font-semibold text-foreground">{lastUpdated}</span></span>
+              <span>{t.lastUpdated} <span className="font-semibold text-foreground">{lastUpdated}</span></span>
             </div>
           </div>
         </div>
@@ -121,6 +124,15 @@ export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('card')
   const [activeExam, setActiveExam] = useState<Exam | null>(null)
   const [showFilters, setShowFilters] = useState(false)
+  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>(() => {
+    const stored = typeof window !== 'undefined' ? localStorage.getItem('sortOrder') : null
+    return stored === 'oldest' ? 'oldest' : 'newest'
+  })
+  const [language, setLanguage] = useState<Language>(() => {
+    const stored = typeof window !== 'undefined' ? localStorage.getItem('language') : null
+    return stored === 'fa' ? 'fa' : 'en'
+  })
+  const t = translations[language]
 
   // Auto theme
   const [dark, setDark] = useState<boolean>(() => {
@@ -141,6 +153,19 @@ export default function App() {
     mq.addEventListener('change', handler)
     return () => mq.removeEventListener('change', handler)
   }, [])
+
+  // Persist selected order
+  useEffect(() => {
+    localStorage.setItem('sortOrder', sortOrder)
+  }, [sortOrder])
+
+  // Persist language and synchronize document locale/direction
+  useEffect(() => {
+    document.documentElement.lang = language
+    document.documentElement.dir = language === 'fa' ? 'rtl' : 'ltr'
+    document.documentElement.dataset.language = language
+    localStorage.setItem('language', language)
+  }, [language])
 
   // Persist theme
   useEffect(() => {
@@ -208,8 +233,17 @@ export default function App() {
     if (selectedYear) results = results.filter((e) => e.year === selectedYear)
     if (selectedSemester) results = results.filter((e) => e.semester === selectedSemester)
     if (selectedExamType) results = results.filter((e) => e.exam_type === selectedExamType)
-    return results
-  }, [exams, searchQuery, selectedCourse, selectedProfessor, selectedYear, selectedSemester, selectedExamType])
+    const seasonOrder: Record<string, number> = { Fall: 3, Summer: 2, Spring: 1, Winter: 0 }
+    return [...results].sort((a, b) => {
+      const direction = sortOrder === 'newest' ? 1 : -1
+      const yearDiff = (Number(b.year) || 0) - (Number(a.year) || 0)
+      if (yearDiff) return direction * yearDiff
+      const seasonDiff = (seasonOrder[b.semester || ''] || 0) - (seasonOrder[a.semester || ''] || 0)
+      if (seasonDiff) return direction * seasonDiff
+      const dateDiff = (Date.parse(b.uploaded_at || '') || 0) - (Date.parse(a.uploaded_at || '') || 0)
+      return direction * dateDiff
+    })
+  }, [exams, searchQuery, selectedCourse, selectedProfessor, selectedYear, selectedSemester, selectedExamType, sortOrder])
 
   const activeFilterCount = [selectedCourse, selectedProfessor, selectedYear, selectedSemester, selectedExamType].filter(Boolean).length
 
@@ -222,12 +256,12 @@ export default function App() {
       .filter((t) => !isNaN(t))
     if (dates.length === 0) return 'July 17, 2026'
     const maxTime = Math.max(...dates)
-    return new Date(maxTime).toLocaleDateString('en-US', {
+    return new Date(maxTime).toLocaleDateString(language === 'fa' ? 'fa-IR' : 'en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
     })
-  }, [exams])
+  }, [exams, language])
 
   const clearAllFilters = () => {
     setSelectedCourse(null)
@@ -241,7 +275,7 @@ export default function App() {
   // ---- Individual Exam Page ----
   if (activeExam) {
     return (
-      <div className={cn(dark && 'dark')}>
+      <div lang={language} dir={language === 'fa' ? 'rtl' : 'ltr'} className={cn(dark && 'dark')}>
         <div className="min-h-screen bg-background text-foreground flex flex-col">
           <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -250,7 +284,7 @@ export default function App() {
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 <ArrowLeft className="h-4 w-4" />
-                Back to Archive
+                {t.backToArchive}
               </button>
               <button
                 onClick={() => setDark(!dark)}
@@ -265,14 +299,14 @@ export default function App() {
           <main className="container mx-auto px-4 py-12 max-w-3xl flex-grow">
             <div className="rounded-lg border bg-card p-8">
               <h1 className="text-2xl font-bold mb-2">
-                {activeExam.course || 'Unknown Course'}
+                {localized(activeExam.course, language) || t.unknownCourse}
               </h1>
 
               <div className="flex flex-wrap gap-4 mt-6 text-sm text-muted-foreground">
                 {activeExam.professor && (
                   <div className="flex items-center gap-2">
                     <User className="h-4 w-4" />
-                    <span>{activeExam.professor}</span>
+                    <span>{localized(activeExam.professor, language)}</span>
                   </div>
                 )}
                 {activeExam.year && (
@@ -284,7 +318,7 @@ export default function App() {
                 {activeExam.semester && (
                   <div className="flex items-center gap-2">
                     <GraduationCap className="h-4 w-4" />
-                    <span>{activeExam.semester}</span>
+                    <span>{localized(activeExam.semester, language)}</span>
                   </div>
                 )}
                 {activeExam.exam_type && (
@@ -299,7 +333,7 @@ export default function App() {
                       'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
                     )}
                   >
-                    {activeExam.exam_type}
+                    {localized(activeExam.exam_type, language)}
                   </span>
                 )}
               </div>
@@ -313,14 +347,14 @@ export default function App() {
                     className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
                   >
                     <FileStack className="h-4 w-4" />
-                    Download Exam Paper
+                    {t.downloadPaper}
                   </a>
                 </div>
               )}
 
               {activeExam.uploaded_at && (
                 <p className="mt-6 text-xs text-muted-foreground">
-                  Uploaded: {new Date(activeExam.uploaded_at).toLocaleDateString('en-US', {
+                  {t.uploaded}: {new Date(activeExam.uploaded_at).toLocaleDateString(language === 'fa' ? 'fa-IR' : 'en-US', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric',
@@ -330,7 +364,7 @@ export default function App() {
             </div>
           </main>
 
-          <Footer lastUpdated={lastUpdatedDate} />
+          <Footer lastUpdated={lastUpdatedDate} t={t} />
         </div>
       </div>
     )
@@ -338,16 +372,24 @@ export default function App() {
 
   // ---- Main List Page ----
   return (
-    <div className={cn(dark && 'dark')}>
+    <div lang={language} dir={language === 'fa' ? 'rtl' : 'ltr'} className={cn(dark && 'dark')}>
       <div className="min-h-screen bg-background text-foreground flex flex-col">
         {/* Header */}
         <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
           <div className="container mx-auto flex h-16 items-center justify-between px-4">
             <div className="flex items-center gap-2">
               <FileText className="h-6 w-6 text-primary" />
-              <h1 className="text-xl font-bold">Exam Archive</h1>
+              <h1 className="text-xl font-bold">{t.archive}</h1>
             </div>
             <div className="flex items-center gap-2">
+              <button
+                onClick={() => setLanguage(language === 'en' ? 'fa' : 'en')}
+                className="rounded-md border px-3 py-2 text-sm font-medium hover:bg-accent transition-colors"
+                aria-label={language === 'en' ? 'Switch to Persian' : 'Switch to English'}
+                title={language === 'en' ? 'Switch to Persian' : 'Switch to English'}
+              >
+                {t.language}
+              </button>
               {/* View Toggle */}
               <div className="flex items-center rounded-md border">
                 <button
@@ -387,10 +429,10 @@ export default function App() {
         <section className="border-b bg-muted/30">
           <div className="container mx-auto px-4 py-12 text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Physics Department Exam Papers
+              {t.departmentPapers}
             </h2>
             <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
-              Browse and download past exam papers. Search by course, professor, year, or semester.
+              {t.browseDescription}
             </p>
           </div>
         </section>
@@ -399,15 +441,27 @@ export default function App() {
         <section className="container mx-auto px-4 py-6">
           <div className="flex gap-3 items-center">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <Search className={cn('absolute top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground', language === 'fa' ? 'right-3' : 'left-3')} />
               <input
                 type="text"
-                placeholder="Search exams by course, professor, year..."
+                placeholder={t.searchPlaceholder}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full rounded-md border bg-background pl-10 pr-4 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                className={cn('w-full rounded-md border bg-background py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring', language === 'fa' ? 'pl-4 pr-10' : 'pl-10 pr-4')}
               />
             </div>
+            <label className="flex items-center gap-2 text-sm text-muted-foreground whitespace-nowrap">
+              <span className="hidden sm:inline">{t.sortBy}</span>
+              <select
+                value={sortOrder}
+                onChange={(event) => setSortOrder(event.target.value as 'newest' | 'oldest')}
+                aria-label={t.sortBy}
+                className="rounded-md border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+              >
+                <option value="newest">{t.newest}</option>
+                <option value="oldest">{t.oldest}</option>
+              </select>
+            </label>
             <button
               onClick={() => setShowFilters(!showFilters)}
               className={cn(
@@ -418,7 +472,7 @@ export default function App() {
               )}
             >
               <Filter className="h-4 w-4" />
-              Filters
+              {t.filters}
               {activeFilterCount > 0 && (
                 <span className="rounded-full bg-primary-foreground text-primary text-xs px-1.5 py-0.5 font-bold">
                   {activeFilterCount}
@@ -429,6 +483,7 @@ export default function App() {
 
           {showFilters && (
             <FilterBar
+              t={t}
               courses={courses}
               professors={professors}
               years={years}
@@ -458,7 +513,7 @@ export default function App() {
             <>
               <div className="mb-4 flex items-center justify-between">
                 <p className="text-sm text-muted-foreground">
-                  {filteredExams.length} exam{filteredExams.length !== 1 ? 's' : ''} found
+                  {filteredExams.length} {language === 'fa' ? t.results : (filteredExams.length === 1 ? t.result : t.results)}
                 </p>
                 {activeFilterCount > 0 && (
                   <button
@@ -466,7 +521,7 @@ export default function App() {
                     className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     <X className="h-3 w-3" />
-                    Clear all
+                    {t.clearAll}
                   </button>
                 )}
               </div>
@@ -474,25 +529,25 @@ export default function App() {
               {filteredExams.length === 0 ? (
                 <div className="flex flex-col items-center justify-center py-20 text-muted-foreground">
                   <FileText className="h-12 w-12 mb-4 opacity-50" />
-                  <p className="text-lg font-medium">No exams found</p>
-                  <p className="text-sm">Try adjusting your search or filters</p>
+                  <p className="text-lg font-medium">{t.noExams}</p>
+                  <p className="text-sm">{t.adjustSearch}</p>
                 </div>
               ) : viewMode === 'card' ? (
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {filteredExams.map((exam, idx) => (
                     <div key={idx} className="min-w-0">  {/* اضافه کردن کلاس به آیتم */}
-                      <ExamCard exam={exam} />
+                      <ExamCard exam={exam} language={language} t={t} />
                     </div>
                   ))}
                 </div>
               ) : (
-                <ExamTable exams={filteredExams} />
+                <ExamTable exams={filteredExams} language={language} t={t} />
               )}
             </>
           )}
         </main>
 
-        <Footer lastUpdated={lastUpdatedDate} />
+        <Footer lastUpdated={lastUpdatedDate} t={t} />
       </div>
     </div>
   )
