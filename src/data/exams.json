@@ -1564,5 +1564,23 @@
     "exam_type": "Midterm",
     "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/میانترم دوم احتمال و کاربرد آن.pdf",
     "uploaded_at": "2026-06-25T00:32:39Z"
+  },
+  {
+    "course": "Electromagnetism I",
+    "professor": "Dr. Baghram",
+    "year": "1405",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/EM1_midterm-exam-1_fall_2026.pdf",
+    "uploaded_at": "2026-11-04T20:25:43Z"
+  },
+  {
+    "course": "Electromagnetism II",
+    "professor": "Dr. Baghram",
+    "year": "1405",
+    "semester": "Fall",
+    "exam_type": "Midterm",
+    "file_url": "https://quanta-bucket-001.s3.ir-thr-at1.arvanstorage.ir/exams/EM2_midterm-exam-1_fall_2026.pdf",
+    "uploaded_at": "2026-11-04T20:25:43Z"
   }
 ]

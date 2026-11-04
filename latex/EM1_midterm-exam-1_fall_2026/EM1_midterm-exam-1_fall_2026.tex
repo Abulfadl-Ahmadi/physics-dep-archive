@@ -1,0 +1,159 @@
+% !TeX program = xelatex
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing,arrows.meta,positioning,calc,3d}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage[american]{circuitikz}
+
+% تنظیم ابعاد و یکسان‌سازی ضخامت مقاومت با سیم‌های مدار
+\ctikzset{
+    bipoles/resistor/height=0.22,
+    bipoles/resistor/width=0.45,
+    bipoles/thickness=1
+}
+
+\usepackage{xepersian}
+
+% Page Setup
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm
+}
+
+% Fonts Setup (تنظیم فونت‌ها بر اساس سیستم خودتان)
+\settextfont[Scale=1.05]{XB Niloofar}
+%\setlatintextfont[Scale=0.95]{Times New Roman}
+\defpersianfont\nastaliq[Scale=1.5]{IranNastaliq}
+
+% تعریف نماد بردار جدایش گریفیث (Script r)
+\newcommand{\rsep}{\ensuremath{{\scriptstyle\mathcal{R}}}}
+\newcommand{\vrsep}{\ensuremath{\vec{\rsep}}}
+\newcommand{\hrsep}{\ensuremath{\hat{\rsep}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\begin{document}
+
+% ==================== PAGE 1 ====================
+\begin{minipage}[t]{0.15\textwidth}
+    \vspace{0pt}
+    % بررسی خودکار وجود فایل لوگو؛ در صورت نبودن، رسم با TikZ
+    \IfFileExists{sut.jpg}{%
+        \includegraphics[width=2.2cm]{sut.jpg}%
+    }{%
+        \begin{tikzpicture}[scale=0.7]
+            \draw[thick] (0,0) circle (1.2cm);
+            \draw (0,0) circle (0.9cm);
+            \node at (0,0.2) {\tiny دانشگاه صنعتی شریف};
+            \node at (0,-0.3) {\tiny ۱۳۴۴};
+        \end{tikzpicture}%
+    }
+\end{minipage}%
+\begin{minipage}[t]{0.85\textwidth}
+    \vspace{0pt}
+    \centering
+    {\nastaliq امتحان میان‌ترم اول درس الکترومغناطیس ۱ - پاییز ۱۴۰۵} \\[12pt]
+    {\nastaliq دانشکده فیزیک - دانشگاه صنعتی شریف} \\[12pt]
+    {\nastaliq دوشنبه ۱۱ آبان ۱۴۰۵ ساعت ۱۰:۳۰ صبح}
+\end{minipage}
+
+\vspace{4pt}
+\hrule height 0.8pt
+\vspace{6pt}
+
+\begin{itemize}[label=$\bullet$, rightmargin=0.5cm, itemsep=2pt]
+    \item لطفا نام، نام خانوادگی و شماره‌ی دانشجویی خود را بر روی پاسخ‌نامه مرقوم فرمایید.
+    \item مدت امتحان ۲ ساعت است.
+    \item امتحان شامل ۳ سوال است. لطفا هر سوال را در برگه‌ی مجزا جواب دهید.
+    \item امتیاز سوال‌ها به صورت زیر است: سوال یک ۱۰ امتیاز، سوال دو ۱۶ امتیاز، سوال سه ۱۶ امتیاز.
+    \item کل سوالات ۴۲ نمره دارد. کسب ۴۰ نمره کفایت می‌کند.
+    \item میان‌ترم اول ۴ نمره پایانی را تشکیل می‌دهد. \hfill با احترام، شانت باغرام
+\end{itemize}
+
+\vspace{4pt}
+\hrule height 0.8pt
+\vspace{10pt}
+
+% ==================== سوال ۱ ====================
+\underline{\textbf{\textit{سوال ۱ ) پنج سوال کوتاه، سوال های زیر را لطفا مختصر جواب دهید!}}}
+
+\textbf{۱-۱)} چرا خطوط میدان الکتریکی یکدیگر را قطع نمی‌کنند؟
+
+\textbf{۱-۲)} با استفاده از قضیه‌ی هلمهولتز که ادعا می‌کند که یک بردار را می‌توان به دو قسمت «بدون کرل» و «بدون دیورژانس» تقسیم کرد؛ نشان دهید که میدان الکتریکی در پیکربندی استاتیک فقط یک درجه‌ی آزادی دارد (با یک میدان اسکالر توصیف می‌شود)!
+
+\textbf{۱-۳)} آیا صفر بودن پتانسیل الکتریکی به معنای صفر بودن میدان الکتریکی است؟ آیا صفر بودن میدان الکتریکی به معنای صفر بودن پتانسیل الکتریکی است؟ برای پاسخ به سوال در هر مورد مثالی را مرقوم بفرمایید.
+
+\textbf{۱-۴)} ارتباط قضیه‌ی استوکس و پایستار بودن نیروی الکترواستاتیک چیست؟
+
+\textbf{۱-۵)} رابطه‌ی زیر را از طریق تعریف نماد لوی-چویتا و دلتای کرونیکر به دست آورید:
+\[
+\vec{\nabla} \times (\vec{\nabla} \times \vec{A}) = \vec{\nabla}(\vec{\nabla} \cdot \vec{A}) - \nabla^2 \vec{A}
+\]
+
+\vspace{8pt}
+
+% ==================== سوال ۲ ====================
+\underline{\textbf{\textit{سوال ۲ ) انرژی الکترواستاتیک یک کره}}}
+
+کرهٔ بارداری با شعاع $R$ و با چگالی ثابت و یکنواخت $\rho$ را در نظر بگیرید.
+
+\textbf{الف)} میدان الکتریکی $\vec{E}$ را با استفاده از قانون گاوس در داخل و بیرون کره به دست آورید.
+
+\textbf{ب)} پتانسیل الکتریکی را در داخل و خارج کره به دست آورید. مبدا پتانسیل را مناسب انتخاب کنید.
+
+\textbf{ج)} انرژی الکترواستاتیک این کره را با استفاده از رابطه $W = \frac{1}{2} \int \rho \varphi \, d\tau$ به دست آورید که $\varphi$ پتانسیل الکتریکی است.
+
+\textbf{د)} انرژی الکترواستاتیک این کره را با استفاده از رابطه $W = \frac{1}{2} \epsilon_0 \int E^2 d\tau$ با انتگرال‌گیری بر روی کل فضا به دست آورید.
+
+\newpage
+
+% ==================== PAGE 2 ====================
+\textbf{ه)} فرض کنید حجم دلخواه $V$ و با سطح $S$ کل کرهٔ باردار را در برداشته باشد. شعاع این کره $R'$ که $R < R'$ است. حال نشان دهید که انرژی الکترواستاتیک $W$ از رابطه زیر نیز به دست می‌آید.
+\[
+W = \frac{\epsilon_0}{2} \left( \int_V E^2 d\tau + \oint_S \varphi \vec{E} \cdot d\vec{a} \right)
+\]
+
+\vspace{14pt}
+
+% ==================== سوال ۳ ====================
+\underline{\textbf{\textit{سوال ۳) قانون کولن تعمیم‌یافته}}}
+
+فرض کنید اندازه‌گیری‌های جدید و فوق‌العاده دقیق نشان داده باشند که قانون کولن دارای خطاست. مشخص شده است که نیروی واقعی برهم‌کنش میان دو بار نقطه‌ای به صورت زیر است:
+\[
+\vec{F} = \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{\rsep^2} \hrsep \left( 1 + \frac{\rsep}{\lambda} \right) e^{-\frac{\rsep}{\lambda}}
+\]
+که $\vrsep = \vec{r} - \vec{r}'$ و در آن $\lambda$ ثابت جدیدی در طبیعت است. این ثابت، بدیهی است که بُعد طول دارد و مقدار آن بسیار بزرگ است؛ مثلاً نصف شعاع جهانِ شناخته‌شده. بنابراین، تصحیحِ واردشده کوچک است و به همین دلیل تاکنون کسی متوجه این اختلاف نشده بود.
+
+وظیفهٔ شما این است که الکترواستاتیک را برای سازگاری با این کشف جدید، بازنویسی کنید. فرض کنید اصل برهم‌نهی همچنان برقرار است.
+
+\textbf{(الف)} میدان الکتریکیِ یک توزیع بار با چگالی $\rho$ چیست؟ (راهنمایی: رابطه‌ای مشابه $\vec{E}(\vec{r}) = \frac{1}{4\pi\epsilon_0} \int d\tau' \, \hrsep \frac{\rho(\vec{r}')}{\rsep^2}$ مدنظر است)
+
+\textbf{(ب)} آیا می‌توان برای این میدان الکتریکی یک پتانسیل نرده‌ای (اسکالر) تعریف کرد؟ به اختصار توضیح دهید چگونه به نتیجهٔ خود رسیده‌اید. اثبات رسمی لازم نیست؛ یک استدلال قانع‌کننده کافی است.
+
+\textbf{(ج)} پتانسیل یک بار نقطه‌ای $q$ را به دست آورید. اگر پاسخ شما به بخش (ب) «خیر» بوده است، بهتر است برگردید و آن را اصلاح کنید! بی‌نهایت را نقطهٔ مرجع پتانسیل بگیرید.
+
+راهنمایی: منظور از پتانسیل رابطه‌ای مشابه $\varphi(\vec{r}) = \frac{1}{4\pi\epsilon_0} \frac{q}{\rsep}$	
+
+\textbf{(د)} برای بار نقطه‌ای $q$ در مبدأ نشان دهید:
+\[
+\oint_S \vec{E} \cdot d\vec{a} + \frac{1}{\lambda^2} \int_V \varphi \, d\tau = \frac{1}{\epsilon_0} q
+\]
+که در آن $S$ سطح و $V$ حجمِ هر کره‌ای است که مرکز آن در محل بار $q$ قرار دارد.
+
+\vfill
+
+\begin{latin}
+\noindent
+``Inspiration exists, but it has to find you working.'' \\
+\textbf{-- Pablo Picasso}
+\end{latin}
+
+\end{document}
