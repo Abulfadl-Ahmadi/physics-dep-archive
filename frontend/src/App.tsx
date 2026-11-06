@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { Search, FileText, Moon, Sun, Filter, X, LayoutGrid, Table, ArrowLeft, Calendar, GraduationCap, User, FileStack, Send, Bug, Clock } from 'lucide-react'
+import { Search, FileText, Moon, Sun, Filter, X, LayoutGrid, Table, ArrowLeft, Calendar, GraduationCap, User, FileStack, Send, Bug, Clock, LibraryBig } from 'lucide-react'
 import { matchSorter } from 'match-sorter'
 import { cn } from '@/lib/utils'
 import { ExamCard } from '@/components/ExamCard'
@@ -9,6 +9,7 @@ import { getExams } from '@/data/exams'
 import type { Exam } from '@/types/exam'
 import { translations, type Language } from '@/i18n'
 import { localized } from '@/lib/localize'
+import ResourceLibrary from '@/components/ResourceLibrary'
 
 type ViewMode = 'card' | 'table'
 
@@ -123,6 +124,7 @@ export default function App() {
   const [selectedExamType, setSelectedExamType] = useState<string | null>(null)
   const [viewMode, setViewMode] = useState<ViewMode>('card')
   const [activeExam, setActiveExam] = useState<Exam | null>(null)
+  const [resourceRoute, setResourceRoute] = useState(() => typeof window !== 'undefined' && /^#\/resources(?:\/|$)/.test(window.location.hash))
   const [showFilters, setShowFilters] = useState(false)
   const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>(() => {
     const stored = typeof window !== 'undefined' ? localStorage.getItem('sortOrder') : null
@@ -130,7 +132,7 @@ export default function App() {
   })
   const [language, setLanguage] = useState<Language>(() => {
     const stored = typeof window !== 'undefined' ? localStorage.getItem('language') : null
-    return stored === 'fa' ? 'fa' : 'en'
+    return stored === 'en' ? 'en' : 'fa'
   })
   const t = translations[language]
 
@@ -161,11 +163,11 @@ export default function App() {
 
   // Persist language and synchronize document locale/direction
   useEffect(() => {
-    document.documentElement.lang = language
-    document.documentElement.dir = language === 'fa' ? 'rtl' : 'ltr'
-    document.documentElement.dataset.language = language
+    document.documentElement.lang = resourceRoute ? 'fa' : language
+    document.documentElement.dir = resourceRoute || language === 'fa' ? 'rtl' : 'ltr'
+    document.documentElement.dataset.language = resourceRoute ? 'fa' : language
     localStorage.setItem('language', language)
-  }, [language])
+  }, [language, resourceRoute])
 
   // Persist theme
   useEffect(() => {
@@ -185,7 +187,9 @@ export default function App() {
   useEffect(() => {
     const handleHash = () => {
       const hash = window.location.hash.slice(1)
-      if (!hash) {
+      const isResourceRoute = hash === '/resources' || hash.startsWith('/resources/')
+      setResourceRoute(isResourceRoute)
+      if (!hash || isResourceRoute) {
         setActiveExam(null)
         return
       }
@@ -272,6 +276,15 @@ export default function App() {
     setSearchQuery('')
   }
 
+  // ---- Educational resources: Telegram post links until licensed storage is available ----
+  if (resourceRoute) {
+    return (
+      <div lang="fa" dir="rtl" className={cn(dark && 'dark')}>
+        <ResourceLibrary language="fa" dark={dark} onBack={() => { window.location.hash = '' }} />
+      </div>
+    )
+  }
+
   // ---- Individual Exam Page ----
   if (activeExam) {
     return (
@@ -279,17 +292,20 @@ export default function App() {
         <div className="min-h-screen bg-background text-foreground flex flex-col">
           <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
-              <button
-                onClick={() => { window.location.hash = '' }}
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                {t.backToArchive}
-              </button>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => { window.location.hash = '' }}
+                  className="flex min-h-11 items-center gap-2 rounded-md text-sm text-muted-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  {t.backToArchive}
+                </button>
+                <a className="inline-flex min-h-11 items-center rounded-md border px-3 text-sm hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" href="#/resources">{language === 'fa' ? 'کتابخانهٔ منابع' : 'Resources'}</a>
+              </div>
               <button
                 onClick={() => setDark(!dark)}
-                className="rounded-md p-2 hover:bg-accent transition-colors"
-                aria-label="Toggle theme"
+                className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md hover:bg-accent transition-colors"
+                aria-label={language === 'fa' ? 'تغییر پوسته' : 'Toggle theme'}
               >
                 {dark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </button>
@@ -377,21 +393,28 @@ export default function App() {
         {/* Header */}
         <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
           <div className="container mx-auto flex h-16 items-center justify-between px-4">
-            <div className="flex items-center gap-2">
-              <FileText className="h-6 w-6 text-primary" />
-              <h1 className="text-xl font-bold">{t.archive}</h1>
+            <div className="flex min-w-0 items-center gap-2">
+              <FileText className="hidden h-6 w-6 shrink-0 text-primary sm:block" />
+              <h1 className="text-sm font-bold sm:text-xl">{t.archive}</h1>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex shrink-0 items-center gap-1 sm:gap-2">
+              <a
+                href="#/resources"
+                className="inline-flex min-h-11 items-center gap-1 rounded-md border px-2 py-2 text-xs font-medium transition-colors hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:gap-2 sm:px-3 sm:text-sm"
+              >
+                <LibraryBig className="h-4 w-4" aria-hidden="true" />
+                <span>{language === 'fa' ? 'کتابخانهٔ منابع' : 'Resources'}</span>
+              </a>
               <button
                 onClick={() => setLanguage(language === 'en' ? 'fa' : 'en')}
-                className="rounded-md border px-3 py-2 text-sm font-medium hover:bg-accent transition-colors"
+                className="min-h-11 rounded-md border px-2 py-2 text-xs font-medium hover:bg-accent transition-colors sm:px-3 sm:text-sm"
                 aria-label={language === 'en' ? 'Switch to Persian' : 'Switch to English'}
                 title={language === 'en' ? 'Switch to Persian' : 'Switch to English'}
               >
                 {t.language}
               </button>
               {/* View Toggle */}
-              <div className="flex items-center rounded-md border">
+              <div className="hidden items-center rounded-md border sm:flex">
                 <button
                   onClick={() => setViewMode('card')}
                   className={cn(
@@ -416,8 +439,8 @@ export default function App() {
               {/* Theme Toggle */}
               <button
                 onClick={() => setDark(!dark)}
-                className="rounded-md p-2 hover:bg-accent transition-colors"
-                aria-label="Toggle theme"
+                className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md hover:bg-accent transition-colors"
+                aria-label={language === 'fa' ? 'تغییر پوسته' : 'Toggle theme'}
               >
                 {dark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </button>

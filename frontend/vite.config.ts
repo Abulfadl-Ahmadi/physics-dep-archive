@@ -1,15 +1,34 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
-import { copyFileSync, mkdirSync, existsSync } from 'fs'
+import { copyFileSync, mkdirSync, existsSync, readFileSync } from 'fs'
 
-function copyExamsJson() {
+function copyArchiveData() {
   return {
-    name: 'copy-exams-json',
+    name: 'copy-archive-data',
+    configureServer(server: { middlewares: { use: (callback: (req: { url?: string; method?: string }, res: { setHeader: (key: string, value: string) => void; end: (body: string) => void }, next: () => void) => void) => void } }) {
+      server.middlewares.use((req, res, next) => {
+        const pathname = req.url?.split('?')[0]
+        if (req.method !== 'GET' || (pathname !== '/exams.json' && pathname !== '/resources.json')) return next()
+        const src = path.resolve(__dirname, '../src/data', pathname.slice(1))
+        if (!existsSync(src)) return next()
+        res.setHeader('Content-Type', 'application/json; charset=utf-8')
+        res.end(readFileSync(src, 'utf8'))
+      })
+    },
     closeBundle() {
-      const src = path.resolve(__dirname, '../src/data/exams.json')
-      const dest = path.resolve(__dirname, 'dist/exams.json')
-      if (existsSync(src)) {
+      for (const file of ['exams.json', 'resources.json']) {
+        const src = path.resolve(__dirname, '../src/data', file)
+        const dest = path.resolve(__dirname, 'dist', file)
+        if (!existsSync(src)) {
+          throw new Error(`Required archive data is missing: ${src}`)
+        }
+        if (file === 'resources.json') {
+          const records = JSON.parse(readFileSync(src, 'utf8')) as unknown
+          if (!Array.isArray(records) || !records.length) {
+            throw new Error('resources.json must be a non-empty array before publishing')
+          }
+        }
         mkdirSync(path.dirname(dest), { recursive: true })
         copyFileSync(src, dest)
       }
@@ -18,7 +37,7 @@ function copyExamsJson() {
 }
 
 export default defineConfig({
-  plugins: [react(), copyExamsJson()],
+  plugins: [react(), copyArchiveData()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
